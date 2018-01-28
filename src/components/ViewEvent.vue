@@ -26,6 +26,12 @@
     <button @click="deleteEvent" class="btn red">
       Delete
     </button>
+
+    <div class="fixed-action-btn">
+      <router-link v-bind:to="{name: 'edit-event', params: {event_id: event_id}}" class="btn-floating btn-large pink">
+        <i class="fa fa-pencil"></i>
+      </router-link>
+    </div>
   </div>
 </template>
 
