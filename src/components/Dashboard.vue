@@ -9,7 +9,7 @@
       <li v-for="event in events" v-bind:key="event.id" class="collection-item">
         <div class="chip">{{event.category}}</div>{{event.event_id}}:{{event.name}}
 
-        <router-link class="secondary-content" v-bind:to="{name: 'view-event', params: {event_id: event.id}}">
+        <router-link class="secondary-content" v-bind:to="{name: 'view-event', params: {event_id: event.event_id}}">
           <i class="fa fa-eye"></i>
         </router-link>
       </li>
