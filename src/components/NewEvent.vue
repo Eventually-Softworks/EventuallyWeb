@@ -61,7 +61,7 @@
           date: this.date
         }).then(docRef => {
           this.$router.push('/')
-        }).catch(error => cnosole.log(err))
+        }).catch(error => console.log(err))
       },
 
       generateUUID() {
