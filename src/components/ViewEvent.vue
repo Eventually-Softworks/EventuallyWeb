@@ -12,19 +12,13 @@
       <li class="collection-item">
         Category: {{category}}
       </li>
-      <li class="collection-item">
-        Date: {{date}}
-      </li>
-      <li class="collection-item">
-        Ubication: {{ubication}}
-      </li>
     </ul>
 
     <router-link to="/" class="btn grey">
-      Back
+      Cancelar
     </router-link>
-    <button @click="deleteEvent" class="btn red">
-      Delete
+    <button @click="deleteEvent" class="btn pink">
+      Eliminar
     </button>
 
     <div class="fixed-action-btn">
@@ -44,8 +38,6 @@
         event_id: null,
         name: null,
         category: null,
-        date: null,
-        ubication: null
       }
     },
 
@@ -56,8 +48,6 @@
             vm.event_id = doc.data().event_id
             vm.name = doc.data().name
             vm.category = doc.data().category
-            vm.date = doc.data().date
-            vm.ubication = doc.data().ubication
           })
         })
       })
@@ -74,8 +64,6 @@
             this.event_id = doc.data().event_id
             this.name = doc.data().name
             this.category = doc.data().category
-            this.date = doc.data().date
-            this.ubication = doc.data().ubication
           })
         })
       },

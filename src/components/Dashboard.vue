@@ -3,11 +3,11 @@
     <ul class="collection with-header">
       <li class="collection-header">
         <h4>
-          Events
+          Eventos
         </h4>
       </li>
       <li v-for="event in events" v-bind:key="event.id" class="collection-item">
-        <div class="chip">{{event.category}}</div>{{event.event_id}}:{{event.name}}
+        <div class="chip">{{event.category}}</div>{{event.name}}
 
         <router-link class="secondary-content" v-bind:to="{name: 'view-event', params: {event_id: event.event_id}}">
           <i class="fa fa-eye"></i>
@@ -40,8 +40,6 @@
             'event_id': doc.data().event_id,
             'name': doc.data().name,
             'category': doc.data().category,
-            'date': doc.data().date,
-            'ubication': doc.data().ubication
           }
           this.events.push(data)
         })

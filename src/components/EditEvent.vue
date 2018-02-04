@@ -21,20 +21,8 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="input-field col s12">
-            <input type="text" v-model="ubication" required>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <input type="text" v-model="date" required>
-          </div>
-        </div>
-
-        <button type="submit" class="btn">Submit</button>
-        <router-link to="/" class="btn">Cancel</router-link>
+        <router-link to="/" class="btn grey">Cancelar</router-link>
+        <button type="submit" class="btn pink">Editar</button>
       </form>
     </div>
   </div>
@@ -49,8 +37,6 @@
         event_id: null,
         name: null,
         category: null,
-        date: null,
-        ubication: null
       }
     },
     beforeRouteEnter(to, from, next) {
@@ -60,8 +46,6 @@
             vm.event_id = doc.data().event_id
             vm.name = doc.data().name
             vm.category = doc.data().category
-            vm.date = doc.data().date
-            vm.ubication = doc.data().ubication
           })
         })
       })
@@ -78,8 +62,6 @@
             this.event_id = doc.data().event_id
             this.name = doc.data().name
             this.category = doc.data().category
-            this.date = doc.data().date
-            this.ubication = doc.data().ubication
           })
         })
       },
@@ -91,8 +73,6 @@
               event_id: this.event_id,
               name: this.name,
               category: this.category,
-              ubication: this.ubication,
-              date: this.date
             }).then(() => {
               this.$router.push({name: 'view-event', params: {event_id: this.event_id}})
             })
